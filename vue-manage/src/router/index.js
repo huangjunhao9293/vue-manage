@@ -1,27 +1,24 @@
 import Vue from 'vue'
-import VueRouter from 'vue-router'
+import Router from 'vue-router'
 
-Vue.use(VueRouter)
+Vue.use(Router)
 
-const routes = [
+
+export const constantRouterMap = [
+  { path: '/login', component: () => import('@/views/login'), hidden: true },
+  // {path: '/cmp/consumer', component: () => import('@/views/cmp/consumer'), hidden: true},
   {
-    path: '/',
-    redirect: '/login'//重定项
+    path: '',
+    redirect: '/login',
   },
   {
-    path: '/login',
-    name: 'login',
-    component: () => import('../views/login.vue')
-  }, {
     path: '/home',
-    name: '/home',
-    component: () => import('../views/layout/home.vue')
-  }
+    component: () => import('@/views/layout/home')
 
+  }
 ]
 
-const router = new VueRouter({
-  routes
+export default new Router({
+  scrollBehavior: () => ({ y: 0 }),
+  routes: constantRouterMap
 })
-
-export default router

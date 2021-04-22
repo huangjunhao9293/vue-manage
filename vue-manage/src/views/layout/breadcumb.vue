@@ -15,7 +15,7 @@ export default {
   setup(props, { root }) {
     return {};
   },
-  components: {}
+  components: {},
 };
 </script>
 

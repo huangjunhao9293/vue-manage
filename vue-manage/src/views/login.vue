@@ -23,7 +23,7 @@ export default {
   setup(props, { root }) {
     const loginparams = reactive({
       user: "admin",
-      password: "12345"
+      password: "12345",
     });
 
     const login = () => {
@@ -37,16 +37,16 @@ export default {
     };
     return {
       ...toRefs(loginparams),
-      login
+      login,
     };
-  }
+  },
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .login {
-  height: 740px;
+  height: 100vh;
   padding: 0;
   margin: 0;
   background-color: rgb(4, 177, 245);
